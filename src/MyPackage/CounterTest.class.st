@@ -31,10 +31,31 @@ CounterTest >> testIncrement [
 ]
 
 { #category : #tests }
+CounterTest >> testInitialize [
+	| c |
+	c := Counter new.
+	self assert: c count equals: 0.
+]
+
+{ #category : #tests }
 CounterTest >> testReset [
 	| c |
 	c := Counter new.
 	c count: 7.
 	c reset.
 	self assert: c count equals: 0.
+]
+
+{ #category : #tests }
+CounterTest >> testStartingAt5 [
+	| c |
+	c := Counter startingAt: 5.
+	self assert: c count equals: 5.
+]
+
+{ #category : #tests }
+CounterTest >> testStartingAt5increment [
+	| c |
+	c := Counter startingAt: 5.
+	self assert: (c increment; count) equals: 6.
 ]
