@@ -26,3 +26,8 @@ Counter >> decrement [
 Counter >> increment [
 	count := count + 1.
 ]
+
+{ #category : #'as yet unclassified' }
+Counter >> reset [
+	count := 0.
+]

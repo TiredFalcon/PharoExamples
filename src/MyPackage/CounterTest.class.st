@@ -29,3 +29,12 @@ CounterTest >> testIncrement [
 	c increment; increment.
 	self assert: c count equals: 4.
 ]
+
+{ #category : #tests }
+CounterTest >> testReset [
+	| c |
+	c := Counter new.
+	c count: 7.
+	c reset.
+	self assert: c count equals: 0.
+]
