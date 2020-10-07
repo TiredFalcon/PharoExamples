@@ -38,6 +38,13 @@ Counter >> initialize [
 	count := 0.
 ]
 
+{ #category : #printing }
+Counter >> printOn: aStream [
+	super printOn: aStream.
+	aStream nextPutAll: ' withValue: ' , count printString.
+	aStream cr.
+]
+
 { #category : #'as yet unclassified' }
 Counter >> reset [
 	count := 0.
