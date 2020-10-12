@@ -29,3 +29,15 @@ DieHandle >> initialize [
 	super initialize.
 	dice := OrderedCollection new.
 ]
+
+{ #category : #accessing }
+DieHandle >> maxValue [
+	^ dice ifEmpty: [ ^ 0 ] ifNotEmpty: [ ^ (dice collect: #faces) sum: #yourself ]
+	
+]
+
+{ #category : #accessing }
+DieHandle >> roll [
+	^ dice ifEmpty: [ ^ 0 ] ifNotEmpty: [ ^ (dice collect: #roll) sum: #yourself ]
+	
+]
