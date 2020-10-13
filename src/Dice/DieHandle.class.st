@@ -2,7 +2,8 @@ Class {
 	#name : #DieHandle,
 	#superclass : #Object,
 	#instVars : [
-		'dice'
+		'dice',
+		'lastResult'
 	],
 	#category : #Dice
 }
@@ -42,13 +43,28 @@ DieHandle >> initialize [
 ]
 
 { #category : #accessing }
+DieHandle >> lastResult [
+	^ lastResult
+]
+
+{ #category : #accessing }
 DieHandle >> maxValue [
 	^ dice ifEmpty: [ ^ 0 ] ifNotEmpty: [ ^ (dice collect: #faces) sum: #yourself ]
 	
 ]
 
+{ #category : #operation }
+DieHandle >> reset [
+	dice := OrderedCollection new.
+]
+
 { #category : #accessing }
 DieHandle >> roll [
-	^ dice ifEmpty: [ ^ 0 ] ifNotEmpty: [ ^ (dice collect: #roll) sum: #yourself ]
+	^ dice ifEmpty: [ ^ 0 ] ifNotEmpty: [
+		| result |
+		result := (dice collect: #roll) sum: #yourself.
+		lastResult := result.
+		^ result
+	]
 	
 ]

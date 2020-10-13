@@ -33,6 +33,16 @@ DieHandleTest >> testMaxValue [
 ]
 
 { #category : #tests }
+DieHandleTest >> testReset [
+	| handle |
+	handle := DieHandle new
+		addDie: (Die withFaces: 6);
+		addDie: (Die withFaces: 10).
+	handle reset.
+	self assert: handle dice size equals: 0
+]
+
+{ #category : #tests }
 DieHandleTest >> testRoll [
 	| handle maxValue diceNumber |
 	handle := DieHandle new
@@ -43,6 +53,20 @@ DieHandleTest >> testRoll [
 	100 timesRepeat: [
 		self assert: (handle roll between: diceNumber and: maxValue)
 	]
+]
+
+{ #category : #tests }
+DieHandleTest >> testRollLastResult [
+	| handle result |
+	handle := DieHandle new
+		addDie: (Die withFaces: 6);
+		addDie: (Die withFaces: 10).
+	result := handle roll.
+	self assert: handle lastResult equals: result.
+	result := handle roll.
+	self assert: handle lastResult equals: result.
+	result := handle roll.
+	self assert: handle lastResult equals: result.
 ]
 
 { #category : #tests }

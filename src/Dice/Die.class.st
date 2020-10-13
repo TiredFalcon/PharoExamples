@@ -10,7 +10,7 @@ Class {
 { #category : #creating }
 Die class >> withFaces: anInteger [ 
 	| d |
-	d := Die new.
+	d := self new.
 	d faces: anInteger.
 	^ d
 ]
