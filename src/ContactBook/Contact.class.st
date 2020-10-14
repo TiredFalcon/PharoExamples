@@ -1,3 +1,7 @@
+"
+I represent a person with a name and an email address.
+I'm usually part of a contact book.
+"
 Class {
 	#name : #Contact,
 	#superclass : #Object,
@@ -31,4 +35,13 @@ Contact >> fullname [
 { #category : #accessing }
 Contact >> fullname: aString [ 
 	fullname := aString
+]
+
+{ #category : #printing }
+Contact >> printOn: aStream [
+	aStream
+		nextPutAll: self fullname;
+		nextPutAll: ' <';
+		nextPutAll: self email;
+		nextPutAll: '>'
 ]
