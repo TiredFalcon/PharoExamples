@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'contacts'
 	],
-	#category : #ContactBook
+	#category : #'ContactBook-Model'
 }
 
 { #category : #creating }

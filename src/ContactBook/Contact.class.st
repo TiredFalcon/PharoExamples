@@ -9,7 +9,7 @@ Class {
 		'fullname',
 		'email'
 	],
-	#category : #ContactBook
+	#category : #'ContactBook-Model'
 }
 
 { #category : #creating }
