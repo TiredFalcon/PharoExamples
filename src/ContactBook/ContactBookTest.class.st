@@ -28,7 +28,7 @@ ContactBookTest >> testAddContact [
 ContactBookTest >> testCreateDefault [
 	| contactBook |
 	contactBook := ContactBook createDefault.
-	self assert: contactBook contacts size equals: 4.
+	self assert: contactBook contacts size equals: 5.
 ]
 
 { #category : #tests }
