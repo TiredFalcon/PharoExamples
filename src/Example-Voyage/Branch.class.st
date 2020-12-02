@@ -2,7 +2,8 @@ Class {
 	#name : #Branch,
 	#superclass : #Object,
 	#instVars : [
-		'leaves'
+		'leaves',
+		'ropes'
 	],
 	#category : #'Example-Voyage'
 }
@@ -25,6 +26,17 @@ Branch class >> isVoyageRoot [
 ]
 
 { #category : #accessing }
+Branch >> addRopeTo: aBranch [
+	self ropes add: (Rope new from: self; to: aBranch)
+]
+
+{ #category : #accessing }
+Branch >> initialize [
+	super initialize.
+	ropes := Set new.
+]
+
+{ #category : #accessing }
 Branch >> leaves [
 	^ leaves
 ]
@@ -32,4 +44,9 @@ Branch >> leaves [
 { #category : #accessing }
 Branch >> leaves: anObject [
 	leaves := anObject
+]
+
+{ #category : #accessing }
+Branch >> ropes [
+	^ ropes
 ]
