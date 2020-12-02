@@ -57,5 +57,6 @@ Branch >> leaves: anObject [
 
 { #category : #accessing }
 Branch >> ropes [
+	ropes ifNil: [ ropes := Set new ].
 	^ ropes
 ]
