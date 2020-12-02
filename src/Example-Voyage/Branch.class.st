@@ -25,6 +25,15 @@ Branch class >> isVoyageRoot [
 	^ false
 ]
 
+{ #category : #testing }
+Branch class >> mongoRopes [
+   <mongoDescription>
+   ^ VOToManyDescription new
+      attributeName: 'ropes';
+      kindCollection: Set;
+      yourself
+]
+
 { #category : #accessing }
 Branch >> addRopeTo: aBranch [
 	self ropes add: (Rope new from: self; to: aBranch)

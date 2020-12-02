@@ -9,9 +9,12 @@ Class {
 
 { #category : #testing }
 Trunk class >> example [
-	^ self new
+	| trunk |
+	trunk := self new
 		branches: Branch example2;
-		yourself
+		yourself.
+	trunk branches first addRopeTo: trunk branches second.
+	^ trunk
 ]
 
 { #category : #testing }

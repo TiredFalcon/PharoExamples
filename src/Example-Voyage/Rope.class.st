@@ -8,6 +8,11 @@ Class {
 	#category : #'Example-Voyage'
 }
 
+{ #category : #testing }
+Rope class >> isVoyageRoot [
+	^ true
+]
+
 { #category : #accessing }
 Rope >> from [
 	^ from
