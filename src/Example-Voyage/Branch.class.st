@@ -22,7 +22,7 @@ Branch class >> example2 [
 
 { #category : #testing }
 Branch class >> isVoyageRoot [
-	^ false
+	^ true
 ]
 
 { #category : #testing }

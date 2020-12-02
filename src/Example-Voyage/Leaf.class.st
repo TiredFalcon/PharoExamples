@@ -21,7 +21,7 @@ Leaf class >> example3 [
 
 { #category : #testing }
 Leaf class >> isVoyageRoot [
-	^ false
+	^ true
 ]
 
 { #category : #accessing }

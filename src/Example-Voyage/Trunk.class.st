@@ -9,17 +9,14 @@ Class {
 
 { #category : #testing }
 Trunk class >> example [
-	| trunk |
-	trunk := self new
+	^ self new
 		branches: Branch example2;
-		yourself.
-	trunk branches first addRopeTo: trunk branches second.
-	^ trunk
+		yourself
 ]
 
 { #category : #testing }
 Trunk class >> isVoyageRoot [
-	^ false
+	^ true
 ]
 
 { #category : #accessing }

@@ -16,7 +16,7 @@ Tree class >> example [
 
 { #category : #testing }
 Tree class >> isVoyageRoot [
-	^ false
+	^ true
 ]
 
 { #category : #accessing }
