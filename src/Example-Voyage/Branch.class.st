@@ -2,6 +2,7 @@ Class {
 	#name : #Branch,
 	#superclass : #Object,
 	#instVars : [
+		'n',
 		'leaves',
 		'ropes'
 	],
@@ -17,12 +18,20 @@ Branch class >> example [
 
 { #category : #example }
 Branch class >> example2 [
-	^ (1 to: 2) collect: [ :v | self example ]
+	^ (1 to: 2) collect: [ :v |
+		self example n: v; yourself ]
 ]
 
 { #category : #example }
 Branch class >> example20 [
-	^ (1 to: 20) collect: [ :v | self example ]
+	^ (1 to: 20) collect: [ :v |
+		self example n: v; yourself ]
+]
+
+{ #category : #example }
+Branch class >> example2000 [
+	^ (1 to: 2000) collect: [ :v |
+		self example n: v; yourself ]
 ]
 
 { #category : #testing }
@@ -58,6 +67,16 @@ Branch >> leaves [
 { #category : #accessing }
 Branch >> leaves: anObject [
 	leaves := anObject
+]
+
+{ #category : #accessing }
+Branch >> n [
+	^ n
+]
+
+{ #category : #accessing }
+Branch >> n: anObject [
+	n := anObject
 ]
 
 { #category : #accessing }
