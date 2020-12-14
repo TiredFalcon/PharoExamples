@@ -79,6 +79,15 @@ Branch >> n: anObject [
 	n := anObject
 ]
 
+{ #category : #printing }
+Branch >> printOn: aStream [
+	super printOn: aStream.
+	aStream
+		nextPutAll: ' (';
+		print: self n;
+		nextPutAll: ')'
+]
+
 { #category : #accessing }
 Branch >> ropes [
 	ropes ifNil: [ ropes := Set new ].

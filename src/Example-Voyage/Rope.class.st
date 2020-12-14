@@ -13,6 +13,11 @@ Rope class >> isVoyageRoot [
 	^ true
 ]
 
+{ #category : #'accessing-computed' }
+Rope >> asAssociation [
+	^ from -> to
+]
+
 { #category : #accessing }
 Rope >> equals: anObject [
 	^ self class = anObject class
@@ -33,6 +38,15 @@ Rope >> from: anObject [
 { #category : #accessing }
 Rope >> hash [
 	^ from hash bitXor: to hash
+]
+
+{ #category : #printing }
+Rope >> printOn: aStream [
+	super printOn: aStream.
+	aStream
+		nextPutAll: ' (';
+		nextPutAll: self asAssociation printString;
+		nextPutAll: ')'
 ]
 
 { #category : #accessing }
