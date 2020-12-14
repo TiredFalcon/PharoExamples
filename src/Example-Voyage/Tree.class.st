@@ -25,6 +25,11 @@ Tree >> leaves [
 ]
 
 { #category : #accessing }
+Tree >> ropes [
+	^ self trunk branches flatCollect: #ropes
+]
+
+{ #category : #accessing }
 Tree >> trunk [
 	^ trunk
 ]
