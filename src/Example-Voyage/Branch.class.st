@@ -20,6 +20,11 @@ Branch class >> example2 [
 	^ (1 to: 2) collect: [ :v | self example ]
 ]
 
+{ #category : #example }
+Branch class >> example20 [
+	^ (1 to: 20) collect: [ :v | self example ]
+]
+
 { #category : #testing }
 Branch class >> isVoyageRoot [
 	^ true

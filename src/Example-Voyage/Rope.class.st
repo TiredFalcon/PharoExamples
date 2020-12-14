@@ -14,6 +14,13 @@ Rope class >> isVoyageRoot [
 ]
 
 { #category : #accessing }
+Rope >> equals: anObject [
+	^ self class = anObject class
+		and: [ self from = anObject from
+		and: [ self to = anObject to ] ]
+]
+
+{ #category : #accessing }
 Rope >> from [
 	^ from
 ]
@@ -21,6 +28,11 @@ Rope >> from [
 { #category : #accessing }
 Rope >> from: anObject [
 	from := anObject
+]
+
+{ #category : #accessing }
+Rope >> hash [
+	^ from hash bitXor: to hash
 ]
 
 { #category : #accessing }
