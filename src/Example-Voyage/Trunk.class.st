@@ -10,7 +10,7 @@ Class {
 { #category : #testing }
 Trunk class >> example [
 	^ self new
-		branches: Branch example20;
+		branches: Branch example2000;
 		yourself
 ]
 
