@@ -18,19 +18,22 @@ Branch class >> example [
 
 { #category : #example }
 Branch class >> example2 [
-	^ (1 to: 2) collect: [ :v |
-		self example n: v; yourself ]
+	^ self exampleN: 2
 ]
 
 { #category : #example }
 Branch class >> example20 [
-	^ (1 to: 20) collect: [ :v |
-		self example n: v; yourself ]
+	^ self exampleN: 20
 ]
 
 { #category : #example }
 Branch class >> example2000 [
-	^ (1 to: 2000) collect: [ :v |
+	^ self exampleN: 2000
+]
+
+{ #category : #example }
+Branch class >> exampleN: aNumber [
+	^ (1 to: aNumber) collect: [ :v |
 		self example n: v; yourself ]
 ]
 
