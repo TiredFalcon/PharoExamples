@@ -15,6 +15,14 @@ Forest class >> current [
 ]
 
 { #category : #testing }
+Forest class >> demo [
+	| forest |
+	forest := self current.
+	forest addTree: Tree example.
+	forest save.
+]
+
+{ #category : #testing }
 Forest class >> initialize [
 	self initializeLocalhostMongoDB
 ]
