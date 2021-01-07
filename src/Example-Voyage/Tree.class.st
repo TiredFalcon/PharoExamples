@@ -2,7 +2,7 @@ Class {
 	#name : #Tree,
 	#superclass : #Object,
 	#instVars : [
-		'trunk'
+		'branches'
 	],
 	#category : #'Example-Voyage'
 }
@@ -10,7 +10,7 @@ Class {
 { #category : #testing }
 Tree class >> example [
 	^ self new
-		trunk: Trunk example;
+		branches: (Branch exampleN: 10000 withLeaves: true);
 		yourself
 ]
 
@@ -20,21 +20,16 @@ Tree class >> isVoyageRoot [
 ]
 
 { #category : #accessing }
+Tree >> branches [
+	^ branches
+]
+
+{ #category : #accessing }
+Tree >> branches: aCollection [ 
+	branches := aCollection
+]
+
+{ #category : #accessing }
 Tree >> leaves [
-	^ self trunk branches flatCollect: #leaves
-]
-
-{ #category : #accessing }
-Tree >> ropes [
-	^ self trunk branches flatCollect: #ropes
-]
-
-{ #category : #accessing }
-Tree >> trunk [
-	^ trunk
-]
-
-{ #category : #accessing }
-Tree >> trunk: anObject [
-	trunk := anObject
+	^ self branches flatCollect: #leaves
 ]
